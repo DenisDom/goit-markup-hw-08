@@ -1,0 +1,77 @@
+.team {
+    background-color: var(--grey-bg-color);
+}
+
+.team-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.name-team {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+
+    text-align: center;
+    margin-bottom: 10px;
+    padding-top: 30px;
+}
+
+.team-card-border {
+    background-color: var(--white-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    width: 270px;
+    height: 428px;
+}
+
+.team-text {
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+    color: var(--primary-text-color);
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.social-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    padding-bottom: 30px;
+}
+
+.social-list-item {
+    width: 44px;
+    height: 44px;
+}
+
+.social-list-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-color);
+    transition: background-color var(--css-transition);
+    border-radius: 50%;
+
+    &:hover,
+    &:focus {
+    background-color: var(--accent-color);
+    }
+}
+
+.social-list-icon {
+    fill: var(--grey-color-webstudio);
+    width: 20px;
+    height: 20px;
+    transition: fill var(--css-transition);
+
+    .social-list-link:hover &,
+    .social-list-link:focus & {
+    fill: var(--white-color);
+    }
+}
