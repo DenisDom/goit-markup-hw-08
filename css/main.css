@@ -112,6 +112,7 @@ ul {
   .mobile-menu__container {
     position: relative;
     padding-left: 40px;
+    padding-right: 40px;
     height: 100%;
   }
   .close-mobile-menu {
@@ -140,6 +141,7 @@ ul {
   }
   .mobile-menu__item {
     margin-bottom: 32px;
+    position: relative;
   }
   .mobile-menu__link {
     font-weight: 500;
@@ -157,14 +159,14 @@ ul {
   .mobile-menu__link_current::after {
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -10px;
     display: block;
     content: "";
-    width: 100%;
+    width: 50%;
     height: 4px;
     background-color: var(--accent-color);
     border-radius: 2px;
-    padding-bottom: -9px;
+    padding-bottom: -1px;
   }
   .contacts-mobile-menu__item {
     margin-bottom: 32px;
@@ -210,16 +212,28 @@ ul {
     color: var(--accent-color);
   }
 }
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  .mobile-menu__link {
+    font-size: 34px;
+  }
+  .contacts-mobile-menu__link--size {
+    font-size: 27px;
+  }
+  .social-mobile-menu__link {
+    font-size: 12px;
+  }
+}
 @media screen and (min-width: 767px) {
   .mobile-menu {
     display: none;
   }
 }
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
 @media screen and (min-width: 480px) {
-  .section {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
   .section-title {
     font-size: 28px;
     line-height: 1.17;
@@ -314,6 +328,10 @@ ul {
 
 .modal-form-field {
   margin-bottom: 10px;
+}
+
+.modal-form-check-field {
+  flex-wrap: wrap;
 }
 
 .modal-form-field-descr {
@@ -418,12 +436,16 @@ ul {
   line-height: 1.71;
   text-align: center;
   color: var(--primary-text-color);
+  width: calc(100% - 30px);
+  font-size: 12px;
 }
 
 .modal-form-link {
   line-height: 1.71;
   text-align: center;
   color: var(--accent-color);
+  font-size: 12px;
+  padding-top: 10px;
 }
 
 .modal-form-submit {
@@ -453,23 +475,39 @@ ul {
   background-color: var(--btn-hero-focus);
 }
 
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  .modal-close-btn {
+    top: 13px;
+  }
+}
 @media screen and (min-width: 480px) {
   .modal {
     width: 450px;
     height: 609px;
   }
+  .modal-form-check-field {
+    flex-wrap: nowrap;
+  }
   .modal-form-link {
     line-height: 1.17;
     font-size: 12px;
+    padding-top: 0;
   }
   .modal-color-text {
     line-height: 1.17;
     font-size: 12px;
+    width: auto;
   }
 }
 @media screen and (min-width: 1200px) {
   .modal {
     width: 528px;
+  }
+  .modal-form-check-field {
+    justify-content: flex-start;
+  }
+  .modal-color-text, .modal-form-link {
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -492,7 +530,7 @@ ul {
 }
 .page-header {
   background-color: var(--white-color);
-  border-bottom: 1px solid #ECECEC;
+  border-bottom: 1px solid #ececec;
 }
 
 .page-header__container {
@@ -555,14 +593,14 @@ ul {
   .nav-list__link_current::after {
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -4px;
     display: block;
     content: "";
     width: 100%;
     height: 4px;
     background-color: var(--accent-color);
     border-radius: 2px;
-    padding-bottom: -9px;
+    padding-bottom: -1px;
   }
   .contacts-list {
     display: flex;
@@ -597,6 +635,9 @@ ul {
     font-size: 26px;
     line-height: 1.19;
   }
+  .nav-list__link_current::after {
+    bottom: -1px;
+  }
   .contacts-list__logo {
     margin-right: 10px;
   }
@@ -617,8 +658,15 @@ ul {
   }
 }
 .hero {
+  background-color: var(--bg-hero);
+  background-image: linear-gradient(to bottom, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: 300px;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .section-hero {
@@ -665,13 +713,8 @@ ul {
 
 @media screen and (min-width: 480px) {
   .hero {
-    background-color: var(--bg-hero);
     padding-top: 118px;
     padding-bottom: 118px;
-    background-image: linear-gradient(to bottom, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-mobile.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     max-width: 480px;
     height: 400px;
     margin: 0 auto;
@@ -767,10 +810,25 @@ ul {
   margin-bottom: 30px;
 }
 
-@media screen and (max-width: 479px) {
-  .advantages-list {
-    padding-top: 60px;
-    padding-bottom: 60px;
+@media screen and (min-width: 320px) {
+  .advantages-list__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  .list-advantages__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+  .list-advantages__text {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--primary-text-color);
+    margin: 0;
   }
 }
 @media screen and (min-width: 480px) {
@@ -793,22 +851,8 @@ ul {
     justify-content: center;
     align-items: center;
   }
-  .list-advantages__title {
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.14;
-    text-align: center;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: #212121;
-    margin-bottom: 10px;
-  }
-  .list-advantages__text {
-    font-size: 14px;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
-    color: #757575;
-    margin: 0;
+  .advantages-list__item:not(:last-child) {
+    margin-bottom: 0px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -820,6 +864,9 @@ ul {
   }
 }
 @media screen and (min-width: 1200px) {
+  .advantages {
+    padding-bottom: 0;
+  }
   .advantages-list__item {
     width: 270px;
   }
@@ -1034,16 +1081,16 @@ ul {
     height: 260px;
   }
 }
+.client-link-item {
+  width: calc(50% - 15px);
+}
+
 @media screen and (max-width: 479px) {
   .client-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-  }
-  .client-link-item {
-    width: 210px;
-    height: 92px;
   }
   .client-link {
     display: flex;
