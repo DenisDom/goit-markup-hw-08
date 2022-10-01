@@ -73,6 +73,10 @@
   margin-bottom: 10px;
 }
 
+.modal-form-check-field {
+  flex-wrap: wrap;
+}
+
 .modal-form-field-descr {
   display: block;
   font-size: 12px;
@@ -182,12 +186,16 @@
   line-height: 1.71;
   text-align: center;
   color: var(--primary-text-color);
+  width: calc(100% - 30px);
+  font-size: 12px;
 }
 
 .modal-form-link {
   line-height: 1.71;
   text-align: center;
   color: var(--accent-color);
+  font-size: 12px;
+  padding-top: 10px;
 }
 
 .modal-form-submit {
@@ -222,24 +230,44 @@
   }
 }
 
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  .modal-close-btn {
+    top: 13px;
+  }
+}
+
 @media screen and (min-width: 480px) {
   .modal {
     width: 450px;
     height: 609px;
   }
 
+  .modal-form-check-field {
+    flex-wrap: nowrap;
+  }
+
   .modal-form-link {
     line-height: 1.17;
     font-size: 12px;
+    padding-top: 0;
   }
 
   .modal-color-text {
     line-height: 1.17;
     font-size: 12px;
+    width: auto;
   }
 }
 @media screen and (min-width: 1200px) {
   .modal {
     width: 528px;
+  }
+
+  .modal-form-check-field {
+    justify-content: flex-start;
+  }
+
+  .modal-color-text, .modal-form-link {
+    font-size: 14px;
   }
 }

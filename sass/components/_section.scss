@@ -19,12 +19,12 @@
 //     margin-top: 0;
 // }
 
-@media screen and (min-width: 480px) {
     .section {
         padding-top: 60px;
         padding-bottom: 60px;
     }
 
+    @media screen and (min-width: 480px) {
     .section-title {
         font-size: 28px;
         line-height: 1.17;

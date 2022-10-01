@@ -33,17 +33,16 @@
 //     fill: currentColor;
 // }
 
+.client-link-item {
+  width: calc(50% - 15px);
+}
+
 @media screen and (max-width: 479px) {
   .client-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-  }
-
-  .client-link-item {
-    width: 210px;
-    height: 92px;
   }
 
   .client-link {
